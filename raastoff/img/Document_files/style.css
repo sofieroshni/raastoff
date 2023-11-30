@@ -1,0 +1,190 @@
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "Fira", "Gill Sans Std Light";
+
+}
+
+body {
+    height: 100vh;
+    background-image: url("img/snow.gif");
+    background-size: cover;
+    background-repeat: none;
+    background-color: #FAFAD8;
+}
+
+header {
+    justify-content: center;
+    margin-left: 0;
+    margin-right: 0;
+    background-color: #750B0B;
+
+
+}
+
+.container {
+    position: relative; /* Tilføjet */
+    width: 100vw;
+    max-width: 1600px;
+    display: flex ;
+    flex-direction: row;
+    justify-content: center;
+    height: 10vh;
+    color: white;
+    padding: 10px;
+}
+
+
+
+nav {
+    display: flex;
+    flex-direction: row;
+    list-style-type: none;
+    justify-content: space-evenly;
+    width: 100%;
+    padding-top: 5vh;
+}
+.hamburger{
+    position: relative;
+    display: block;
+    width: 35px;
+    height: 35px;
+
+
+    appearance: none;
+    background: none;
+    outline: none;
+    border:none;
+}
+
+.hamburger .bar,
+.hamburger:after,
+.hamburger:before {
+    content: '';
+    display: block;
+    width: 100%;
+    height: 5px;
+    background-color: white;
+    margin: 6px 20px;
+    transition: 0.5s;
+}
+
+/*Overste pseoudo*/
+.hamburger.is-active:before {
+    transform: rotate(-45deg) translate(-8px, 6px);
+}
+/*Nederste pseoudo*/
+.hamburger.is-active:after {
+    transform: rotate(45deg) translate(-8px, -8px);
+}
+
+
+.hamburger.is-active .bar {
+    opacity: 0;
+}
+/*mobilbar*/
+.mobile-nav{
+    position: fixed;
+    top: 0;
+    left:100%;
+    width: 100%;
+    min-height: 100vh;
+    display: block;
+    z-index: 98;
+    background-color: gray;
+    padding-top: 120px;
+    transition: 0.4s;
+    margin-top: 10vh;/*Nu kan man stadigvæk se menubaren*/
+}
+
+.mobile-nav.is-active{
+    left: 0;
+}
+
+.mobile-nav a {
+    display: block;
+    width: 100%;
+    max-width: 200px;
+    text-align: center;
+    padding: 12px 16px;
+    margin: 0 auto 16px;
+    text-decoration: none;
+    background-color: white;
+    color: black;
+    text-decoration: none;
+}
+
+.mobile-nav a:hover {
+    background-color: lightgray;
+}
+
+
+
+
+
+main{
+    width: 100vw;
+    padding: 10%;
+    margin-top: 10%;
+    justify-content: center;
+    display: block;
+    height: 800px;
+}
+
+.krans{
+    position: absolute;
+    z-index: 1;
+    width: 70vw;
+    display: inline-flex;
+    flex-direction: column;
+    justify-content: center;
+
+
+}
+.video{
+    position: absolute
+;
+
+
+
+}
+.kransimg{
+    position: relative;
+}
+
+
+
+
+
+
+
+//*MOBILE STYLING*//
+@media(min-width: 768px) {
+    .mobile-nav {
+        display: none;
+    }
+}
+
+/* En af de to .hamburger deklarationer er fjernet */
+
+@media(max-width: 1024px) {
+    .container {
+        display: flex;
+        justify-content: space-between;
+        width: 90%;
+
+    }
+}
+/*Fjerner 3 streger når den kommer over de 700px*/
+@media(min-width: 768px) {
+    .hamburger {
+        display: none;
+    }
+}
+@media(max-width: 768px) {
+    .container nav{
+        display: none;
+    }
+}
